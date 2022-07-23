@@ -22,13 +22,13 @@ export const getUser = async (uname, pass) => {
 }
 
 export const getDatos= async()=>{
-  const response=await api.get('/datos')
+  const response=await api.get('/sensores')
 
   return response;
 }
 
-export const getRegado= async()=>{
-  const response=await api.get('/regado')
+export const getBomba= async()=>{
+  const response=await api.get('/bomba')
 
   return response;
 }

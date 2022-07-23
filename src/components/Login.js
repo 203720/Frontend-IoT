@@ -67,7 +67,7 @@ function Login() {
             {renderErrorMessage("pass")}
           </div>
           <div className="button-container">
-            <button type="submit" value="Ingresar" id="btn" className='btn btn-primary'>Enviar datos</button>
+            <button type="submit" value="Ingresar" id="btn" className='btn btn-primary'>Iniciar sesión</button>
   
           </div>
         </form>
