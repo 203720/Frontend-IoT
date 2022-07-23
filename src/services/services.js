@@ -16,6 +16,7 @@ export const getUser = async (uname, pass) => {
     return (false)
   } else {
     const user = response.data
+    console.log(user)
     return (user)
   }
 

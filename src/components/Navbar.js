@@ -8,13 +8,18 @@ const logout =()=>{
 
 export const Navbar = () => {
     return (
-        <div className={style.container}>
-            <nav className={style.nav}>
-                <a className={style.aMenu} href="http://localhost:3000/dashboard">Dashboard</a>     
-                {/* <a className={style.a} href="http://localhost:3000/menu/Historial">Historiales</a> */}
-                <div className={style.btnLogout} >
-                    <a className='btn btn-danger' href="http://localhost:3000/" onClick={logout} >Logout</a>
-                </div>
+        <div>
+            <nav className='barra'>
+            <a className='logo barra-link'>VortexSoft</a>
+            <button className='nav-toggle' aria-label="Abrir menú">
+                <i className='fa-solid fa-bars'></i>
+            </button>
+            <ul className='nav-menun'>
+                <li className='nav-menu-seccion'><a className='nav-menu-liga barra-link' href="http://localhost:3000/dashboard">Tablero</a></li> 
+                <li className='nav-menu-seccion'><a className='nav-menu-liga barra-link' href="http://localhost:3000/dashboard">Historial</a></li>   
+                <li className='nav-menu-seccion'><a className='nav-menu-liga barra-link' href="http://localhost:3000/calculos">Muestras</a></li>   
+                <li className='nav-menu-seccion'><a className='nav-menu-liga barra-link' href="http://localhost:3000/" onClick={logout}>Cerrar sesión</a></li>    
+            </ul>
             </nav>
         </div>
     )

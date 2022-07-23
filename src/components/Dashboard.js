@@ -1,92 +1,49 @@
-import { useEffect, useState } from 'react'
-import { Navigate } from 'react-router-dom'
 import { getDatos, getBomba } from '../services/services'
-import { BombaTable } from './BombaTable';
-import { SensoresTable } from './SensoresTable';
 import { Navbar } from './Navbar';
+import temImage from "../img/temp.png";
+import humImage from "../img/hum.png";
+import humSueloImage from "../img/humSuelo.png";
+import aguaImage from "../img/agua.png";
+function Dashboard() {
+    return (
+        <div>
+            <Navbar />
 
-
-
-export function Dashboard() {
-    // const [datos, setDatos] = useState([{ fecha: "1" }]);
-    // const [bomba, setBomba] = useState([{ fecha: "1" }]);
-
-    // useEffect(() => {
-    //     getDatos().then((response) => {
-    //         setDatos(response.data)
-    //     })
-    //     getBomba().then((res) => {
-    //         setBomba(res.data)
-    //     })
-    // }, []);
-
-
-    //if (localStorage.getItem('user') === 'true') {
-        return (
             <div>
-                <Navbar />
-                <div>
-
-
-
-                    <h1>
-                        Ultimos datos recoletados de la planta
-                    </h1>
-
-                    <div>
-                        {/* Tabla del ultimo dato obtenido del hardware */}
-                        <table className="table table-striped ">
-
-                            <thead className='thead-dark'>
-                                <tr className='table-primary'>
-                                    <th colSpan="7"><p className="text-center">Tabla de datos recolectados</p></th>
-                                </tr>
-                                <tr className='text-center table-primary'>
-                                    <th >ID</th>
-                                    <th>HORA</th>
-                                    <th>FECHA</th>
-                                    <th>Temperatura</th>
-                                    <th>humedad</th>
-                                    <th>Agua</th>
-                                    <th>Suelo</th>
-                                </tr>
-                            </thead>
-
-                            <tbody >
-                                {/* <SensoresTable {...datos[datos.length - 1]} /> */}
-
-
-                            </tbody>
-                        </table>
-
-                        {/* Tabla del historial de regado */}
-                        <table className="table table-striped">
-
-                            <thead>
-                                <tr className='table-primary'>
-                                    <th colSpan="3"><p className="text-center">Tabla de Historial de regado</p></th>
-                                </tr>
-                                <tr className='text-center table-primary'>
-                                    <th>ID</th>
-                                    <th>HORA</th>
-                                    <th>FECHA</th>
-                                </tr>
-                            </thead>
-
-                            <tbody>
-                                {/* <BombaTable  {...bomba[bomba.length - 1]} /> */}
-
-
-                            </tbody>
-                        </table>
+                <h1>Variables en tiempo real</h1>
+                <div class="card-group">
+                    <div class="card">
+                        <img src={temImage} class="card-img-top" alt="temp"></img>
+                        <div class="card-body">
+                        <h5 class="card-title">Temperatura</h5>
+                        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                        </div>
+                    </div>
+                    <div class="card">
+                    <img src={humImage} class="card-img-top" alt="..."></img>
+                        <div class="card-body">
+                        <h5 class="card-title">Humedad</h5>
+                        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                        </div>
+                    </div>
+                    <div class="card">
+                    <img src={humSueloImage} class="card-img-top" alt="..."></img>
+                        <div class="card-body">
+                        <h5 class="card-title">Humedad del suelo</h5>
+                        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                        </div>
+                    </div>
+                    <div class="card">
+                    <img src={aguaImage} class="card-img-top" alt="..."></img>
+                        <div class="card-body">
+                        <h5 class="card-title">Bomba de agua</h5>
+                        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                        </div>
                     </div>
                 </div>
             </div>
-        )
-    //} else {
-      //  return <Navigate to='/' />
-    //}
+        </div>
+    )
+};
 
-
-
-}
+export default Dashboard;
